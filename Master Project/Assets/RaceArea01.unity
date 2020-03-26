@@ -701,6 +701,7 @@ GameObject:
   - component: {fileID: 283750678}
   - component: {fileID: 283750677}
   - component: {fileID: 283750676}
+  - component: {fileID: 283750680}
   m_Layer: 0
   m_Name: LapCompleteTrigger
   m_TagString: Untagged
@@ -768,12 +769,29 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 283750675}
   m_LocalRotation: {x: 0, y: 0.30070576, z: 0, w: 0.953717}
-  m_LocalPosition: {x: -114.4, y: -0.13, z: -96.91}
+  m_LocalPosition: {x: -107.2, y: -0.13, z: -86.4}
   m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 35, z: 0}
+--- !u!114 &283750680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 283750675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13e7a1a72a932df4fbc306b33f3ae034, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LapCompleteTrig: {fileID: 283750675}
+  HalfLapTrig: {fileID: 1723889704}
+  MinuteDisplay: {fileID: 1004029635}
+  SecondDisplay: {fileID: 129659566}
+  MilliDisplay: {fileID: 1743096024}
+  LapTimeBox: {fileID: 0}
 --- !u!1 &377959547 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100042, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 2}
@@ -1768,7 +1786,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1723889704}
   m_LocalRotation: {x: 0, y: 0.5, z: 0, w: 0.8660254}
-  m_LocalPosition: {x: -89.6, y: -0.13, z: -68.72}
+  m_LocalPosition: {x: -114.16, y: -0.13, z: -95.68}
   m_LocalScale: {x: 16.32, y: 7, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
