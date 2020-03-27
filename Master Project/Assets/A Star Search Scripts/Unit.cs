@@ -29,6 +29,7 @@ public class Unit : MonoBehaviour
     IEnumerator FollowPath()
     {
         Vector3 currentWaypoint = path[0];
+
         while (true)
         {
             if (transform.position == currentWaypoint)
@@ -41,7 +42,7 @@ public class Unit : MonoBehaviour
                 currentWaypoint = path[targetIndex];
             }
 
-          //  transform.position = Vector3.MoveTowards(transform.position, currentWaypoint, speed * Time.deltaTime);
+           // transform.position = Vector3.MoveTowards(transform.position, currentWaypoint, speed * Time.deltaTime);
             yield return null;
 
         }

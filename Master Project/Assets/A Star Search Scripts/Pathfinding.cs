@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System;
 
 public class Pathfinding : MonoBehaviour
@@ -24,11 +25,15 @@ public class Pathfinding : MonoBehaviour
     IEnumerator FindPath(Vector3 startPos, Vector3 targetPos)
     {
 
+        Stopwatch sw = new Stopwatch();
+        sw.Start();
+
         Vector3[] waypoints = new Vector3[0];
         bool pathSuccess = false;
 
         Node startNode = grid.NodeFromWorldPoint(startPos);
         Node targetNode = grid.NodeFromWorldPoint(targetPos);
+        startNode.parent = startNode;
 
 
         if (startNode.walkable && targetNode.walkable)
@@ -44,6 +49,8 @@ public class Pathfinding : MonoBehaviour
 
                 if (currentNode == targetNode)
                 {
+                    sw.Stop();
+                    print("Path found: " + sw.ElapsedMilliseconds + " ms");
                     pathSuccess = true;
                     break;
                 }
@@ -55,7 +62,7 @@ public class Pathfinding : MonoBehaviour
                         continue;
                     }
 
-                    int newMovementCostToNeighbour = currentNode.gCost + GetDistance(currentNode, neighbour);
+                    int newMovementCostToNeighbour = currentNode.gCost + GetDistance(currentNode, neighbour) + neighbour.movementPenalty;
                     if (newMovementCostToNeighbour < neighbour.gCost || !openSet.Contains(neighbour))
                     {
                         neighbour.gCost = newMovementCostToNeighbour;
