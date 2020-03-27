@@ -83,7 +83,7 @@ public class Grid : MonoBehaviour
 
     void BlurPenaltyMap(int blurSize)
     {
-        int kernelSize = blurSize * 2 + 1;
+        int kernelSize = blurSize * 6 + 1;
         int kernelExtents = (kernelSize - 1) / 2;
 
         int[,] penaltiesHorizontalPass = new int[gridSizeX, gridSizeY];
