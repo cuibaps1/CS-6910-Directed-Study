@@ -10,9 +10,13 @@ public class Unit : MonoBehaviour
     Vector3[] path;
     int targetIndex;
 
-    void Start()
+    void Update()
     {
-        PathRequestManager.RequestPath(transform.position, target.position, OnPathFound);
+        if (Input.GetButtonDown("Jump"))
+        {
+            PathRequestManager.RequestPath(transform.position, target.position, OnPathFound);
+
+        }
     }
 
     public void OnPathFound(Vector3[] newPath, bool pathSuccessful)
@@ -50,6 +54,7 @@ public class Unit : MonoBehaviour
 
     public void OnDrawGizmos()
     {
+
         if (path != null)
         {
             for (int i = targetIndex; i < path.Length; i++)
