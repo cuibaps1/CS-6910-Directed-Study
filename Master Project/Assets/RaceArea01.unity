@@ -1564,10 +1564,9 @@ MonoBehaviour:
   Mark02: {fileID: 160399931}
   Mark03: {fileID: 1776721865}
   Mark04: {fileID: 122631468}
-  Mark05: {fileID: 0}
-  Mark06: {fileID: 2102892097}
-  Mark07: {fileID: 1038692732}
-  Mark08: {fileID: 113668797}
+  Mark05: {fileID: 2102892097}
+  Mark06: {fileID: 1038692732}
+  Mark07: {fileID: 113668797}
   MarkTracker: 0
 --- !u!1 &357822516
 GameObject:
