@@ -1,6 +1,8 @@
 ﻿var CarControl : GameObject;
+var AICar : GameObject;
 
 function Start () {
-	CarControl.GetComponent("CarController").enabled = true;
+	CarControl.GetComponent("CarUserControl").enabled = true;
+	AICar.GetComponent("CarAIControl").enabled = true;
 }
 
