@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Countdown : MonoBehaviour {
 
@@ -13,11 +14,13 @@ public class Countdown : MonoBehaviour {
 
 
 
-	void Start () {
+
+	void Start ()
+    {
         StartCoroutine(CountStart());
-	}
-	
-	IEnumerator CountStart()
+    }
+
+    IEnumerator CountStart()
     {
         yield return new WaitForSeconds(0.5f);
         CountDown.GetComponent<Text>().text = "3";
@@ -42,4 +45,7 @@ public class Countdown : MonoBehaviour {
         LapTimer.SetActive(true);
         CarControls.SetActive(true);
     }
+
+   
+   
 }
