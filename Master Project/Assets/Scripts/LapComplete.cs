@@ -62,6 +62,12 @@ public class LapComplete : MonoBehaviour {
         }
 
         MilliDisplay.GetComponent<Text>().text = "" + TimeManager.MilliCount;
+
+        PlayerPrefs.SetInt("MinSave", TimeManager.MinuteCount);
+        PlayerPrefs.SetInt("SecSave", TimeManager.SecondCount);
+        PlayerPrefs.SetFloat("MilliSave", TimeManager.MilliCount);
+
+
         TimeManager.MinuteCount = 0;
         TimeManager.SecondCount = 0;
         TimeManager.MilliCount = 0;
@@ -72,5 +78,9 @@ public class LapComplete : MonoBehaviour {
 
 
         LapCompleteTrig.SetActive(false);
+    }
+    public void deletePlayerPrefs()
+    {
+        PlayerPrefs.DeleteAll();
     }
 }
